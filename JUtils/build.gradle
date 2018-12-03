@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'com.jfrog.bintray' version '1.8.4'
+}
+
+group 'im.joshua'
+version '1.0.0-DEVELOP'
+
+sourceCompatibility = 1.8
+
+bintray {
+    user = 'joshuayin'
+    key = '0d73773c58ebf3d42df4cc626583927380ae77ca'
+    pkg {
+        repo = 'maven'
+        name = 'JUtils'
+        userOrg = 'joshuayin'
+        desc = 'Utils tool for Java'
+        licenses = ['Apache-2.0']
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'jar'
+                //项目描述，随意填
+                name 'Utils tool for Java'
+                url ''
+                licenses {
+                    license {
+                        //开源协议
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        //开发者的个人信息
+                        id 'JUtils'
+                        name 'JoshuaYin'
+                        email 'joshua.yin@icloud.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/JoshuaYin/JUtils.git'
+                    developerConnection 'https://github.com/JoshuaYin/JUtils.git'
+                    url 'https://github.com/JoshuaYin/JUtils'
+                }
+            }
+        }
+    }
+}
