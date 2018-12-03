@@ -1,2 +1,2 @@
-# maven
-Some Java project base on maven
+# JUtils
+An utils tool for Java
